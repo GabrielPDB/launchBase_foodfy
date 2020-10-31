@@ -155,6 +155,10 @@ footer p {
 }
 
 /* ABOUT */
+.content {
+    max-width: 940px;
+    margin: 0 auto;
+}
 
 .content h2 {
     margin-bottom: 10px;
