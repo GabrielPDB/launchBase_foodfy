@@ -14,16 +14,22 @@ nunjucks.configure('views', {
     noCache: true
 })
 
-server.get('/', function(req, res) {
-    return res.render('index')
+server.get('/', function (req, res) {
+    return res.render('home', { recipes })
 })
 
-server.get('/about', function(req, res) {
-    return res.render('about')
+server.get('/about', function (req, res) {
+    return res.render('about', { page: 'about' })
 })
 
-server.get('/recipes', function(req, res) {
-    return res.render('recipes')
+server.get('/recipes', function (req, res) {
+    return res.render('recipes', { recipes, page: 'recipes' })
+})
+
+server.get("/recipes/:index", function (req, res) {
+    const recipeIndex = req.params.index;
+
+    return res.render('recipe', { recipe: recipes[recipeIndex], page: 'recipes'} )
 })
 
 server.listen(3000, function () {

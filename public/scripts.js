@@ -1,32 +1,34 @@
-const modalOverlay = document.querySelector('.modal-overlay')
 const cards = document.querySelectorAll('.card')
-
-
-
 
 for (let card of cards) {
     card.addEventListener('click', function () {
-        const image_src = card.querySelector('.card-image img').src
-        const card_name = card.querySelector('.card-name h3').textContent
-        const card_author = card.querySelector('.card-author h4').textContent
-        
-        modalOverlay.classList.add('active')
-        
-        modalOverlay.querySelector('.card').innerHTML = `
-                <div class="card-image">
-                    <img src="${image_src}" alt="${card_name}">
-                </div>
-                <div class="card-name">
-                    <p>${card_name}</p>
-                </div>
-                <div class="card-author">
-                    <p>${card_author}</p>
-                </div>
-        `
+        const recipeIndex = card.getAttribute('id')
 
+        window.location.href = `/recipes/${recipeIndex}`
     })
 }
 
-document.querySelector('.close-modal').addEventListener('click', function () {
-    modalOverlay.classList.remove('active')
-})
+/* RECIPE SHOW/HIDE */
+
+const buttons = document.querySelectorAll('.showHideButton')
+const items = document.querySelectorAll('.recipe_item')
+
+for (let button of buttons) {
+    button.addEventListener('click', function () {
+        if (button.innerHTML === "esconder") {
+            button.innerHTML = 'mostrar'
+        } else {
+            button.innerHTML = 'esconder'
+        }
+    })
+}
+
+for (let button in buttons) {
+    buttons[button].addEventListener('click', function () {
+        if (items[button].classList.contains('hide')) {
+            items[button].classList.remove('hide')
+        } else {
+            items[button].classList.add('hide')
+        }
+    })
+}

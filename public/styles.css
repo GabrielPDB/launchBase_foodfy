@@ -155,6 +155,7 @@ footer p {
 }
 
 /* ABOUT */
+
 .content {
     max-width: 940px;
     margin: 0 auto;
@@ -178,63 +179,73 @@ footer p {
     margin: 10px 0;
 }
 
-/* REVENUE */
+/* RECIPE */
 
-/* MODAL */
-
-.modal-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.recipe {
+    max-width: 940px;
+    margin: 0 auto;
 }
 
-.modal {
-    background-color: white;
-    width: 660px;
-    height: 413px;
-    position: relative;
-    text-align: center;
-    border-radius: 16px;
-    padding: 30px;
-}
-
-.modal .card {
-    text-align: center;
-}
-
-.modal .card-image img {
+.recipe_image img {
     border-radius: 15px;
-    width: 100%;
-    margin-bottom: 20px;
 }
 
-.modal .card-name {
-    font-size: 24px;
-    color: var(--primary-color);
-    margin-bottom: 5px;
+.recipe_info {
+    margin: 50px auto;
+    text-align: center;
 }
 
-.modal .card-author {
-    font-size: 18px;
+.recipe_info .recipe_name h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #111111;
+}
+
+.recipe_info .recipe_name p {
+    font-size: 20px;
     color: #777777;
+    line-height: 30px;
 }
 
-.modal .close-modal a {
-    font-size: 16px;
+.recipe .section_title {
+    font-size: 24px;
+    color: #111111;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.recipe .section_title h2 {
+    margin-right: 8px;
+}
+
+.recipe .section_title button {
+    font-weight: bold;
+    font-size: 12px;
     color: #999999;
+    text-transform: uppercase;
+    background-color: white;
     cursor: pointer;
+    outline: none;
 }
 
-/* MODAL.ACTIVE */
+.recipe_data {
+    max-width: 940px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
+.ingredients_list, .preparation_list, .more-information {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+/* SHOW/HIDE BUTTON */
+
+.recipe_item.hide {
+    display: none;
 }
