@@ -3,31 +3,31 @@ const recipes = require('../data')
 /* WEBSITE */
 
 exports.home = function (req, res) {
-    return res.render('home', { recipes })
+    return res.render('website/home', { recipes })
 }
 
 exports.about = function (req, res) {
-    return res.render('about', { page: 'about' })
+    return res.render('website/about', { page: 'about' })
 }
 
 exports.recipesPage = function (req, res) {
-    return res.render('recipes', { recipes, page: 'recipes' })
+    return res.render('website/recipes', { recipes, page: 'recipes' })
 }
 
 exports.indexRecipe = function (req, res) {
     const recipeIndex = req.params.index;
 
-    return res.render('recipe', { recipe: recipes[recipeIndex], page: 'recipes'} )
+    return res.render('website/recipe', { recipe: recipes[recipeIndex], page: 'recipes'} )
 }
 
 /* ADMIN */
 
 exports.index = function (req, res) {
-    return true
+    return res.render("admin/index")
 }
 
 exports.create = function (req, res) {
-    return true
+    return res.render("admin/create")
 }
 
 exports.post = function (req, res) {
@@ -35,11 +35,11 @@ exports.post = function (req, res) {
 }
 
 exports.show = function (req, res) {
-    return true
+    return res.render("admin/show")
 }
 
 exports.edit = function (req, res) {
-    return true
+    return res.render("admin/edit")
 }
 
 exports.put = function (req, res) {

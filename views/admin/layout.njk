@@ -18,13 +18,13 @@
             <a href="/about" class="{{ 'selected' if page == 'about' }}" >Sobre</a>
             <a href="/recipes" class="{{ 'selected' if page == 'recipes' }}">Receitas</a>
         </div>
+
+        <div class="menu">
+            <a href="/admin">Admin</a>
+        </div>
     </header>
 
     {% block content %}{% endblock %}
-
-    <footer>
-        <p>Todos direitos reservados, receitas Foodfy.</p>
-    </footer>
 
     <script src="/scripts.js"></script>
 </body>

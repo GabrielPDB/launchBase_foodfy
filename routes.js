@@ -11,6 +11,10 @@ routes.get("/recipes/:index", recipes.indexRecipe)
 
 /* ROUTES ADMIN */
 
+routes.get("/admin", function (req, res) {
+    return res.redirect("/admin/recipes")
+})
+
 routes.get("/admin/recipes", recipes.index)
 routes.get("/admin/recipes/create", recipes.create)
 routes.get("/admin/recipes/:id", recipes.show)
