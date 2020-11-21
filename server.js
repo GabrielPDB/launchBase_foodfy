@@ -32,6 +32,6 @@ server.get("/recipes/:index", function (req, res) {
     return res.render('recipe', { recipe: recipes[recipeIndex], page: 'recipes'} )
 })
 
-server.listen(3000, function () {
+server.listen(3100, function () {
     console.log('server is running')
 })
