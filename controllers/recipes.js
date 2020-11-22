@@ -1,3 +1,5 @@
+const fs = require('fs')
+const data = require('../data.json')
 const recipes = require('../data')
 
 /* WEBSITE */
@@ -31,7 +33,41 @@ exports.create = function (req, res) {
 }
 
 exports.post = function (req, res) {
-    return true
+    const keys = Object.keys(req.body)
+
+    // Validação
+    for (key of keys) {
+        if (req.body[key] == '') {
+            return res.send('Please, fill all fields!')
+        }
+    }
+
+    let { ingredients, preparation } = req.body
+
+    if (ingredients[ingredients.lenght - 1] == '') ingredients.pop()
+    if (preparation[preparation.lenght - 1] == '') preparation.pop()
+
+    let id = 1
+    const lastRecipe = data.recipes[data.recipes.length - 1]
+
+    if (lastRecipe) {
+        id = lastRecipe.id + 1
+    }
+
+    data.recipes.push({
+        id,
+        ...req.body,
+        ingredients,
+        preparation
+    })
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
+        if (err) return res.send('Write File Error!')
+
+        return res.redirect(`/admin/recipe/${id}`)
+    })
+
+
 }
 
 exports.show = function (req, res) {
