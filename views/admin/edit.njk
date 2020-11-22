@@ -2,11 +2,13 @@
 
 {% block content %}
     <div class="container">
-        <form action="#">
+        <form method="POST" action="/admin/recipes?_method=PUT">
             <div class="admin-header">
                 <h2 class="admin">Editando receita</h2>
                 <div class="options">
                     <a href="#" class="button">Deletar</a>
+
+                    <input type="hidden" name="id" value="{{ recipe.id }}">
                     <button type="submit" class="button">Salvar receita</button>
                 </div>
             </div>
