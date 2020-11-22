@@ -19,7 +19,7 @@ exports.recipesPage = function (req, res) {
 exports.indexRecipe = function (req, res) {
     const recipeIndex = req.params.index;
 
-    return res.render('website/recipe', { recipe: recipes[recipeIndex], page: 'recipes'} )
+    return res.render('website/recipe', { recipe: recipes[recipeIndex], page: 'recipes' })
 }
 
 /* ADMIN */
@@ -64,14 +64,22 @@ exports.post = function (req, res) {
     fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
         if (err) return res.send('Write File Error!')
 
-        return res.redirect(`/admin/recipe/${id}`)
+        return res.redirect(`/admin/recipes/${id}`)
     })
 
 
 }
 
 exports.show = function (req, res) {
-    return res.render("admin/show")
+    const { id } = req.params
+
+    const foundRecipe = data.recipes.find(function (recipe) {
+        return recipe.id == id
+    })
+
+    if (!foundRecipe) return res.send('Instructor not found!')
+
+    return res.render("admin/show", { recipe: foundRecipe })
 }
 
 exports.edit = function (req, res) {

@@ -1,14 +1,21 @@
 <div class="item">
-    <div>Nome da receita</div>
+    <div>Imagem da receita</div>
     <div>
-        <input type="text" name="name">
+        <input type="url" name="image" placeholder="http://" value="{{ recipe.recipe_image_url }}">
     </div>
 </div>
 
 <div class="item">
-    <div>Imagem da receita</div>
+    <div>Nome da receita</div>
     <div>
-        <input type="url" name="recipe_image_url" placeholder="http://" value="{{ recipe.recipe_image_url }}">
+        <input type="text" name="title" placeholder="Nome da receita">
+    </div>
+</div>
+
+<div class="item">
+    <div>Autor da receita</div>
+    <div>
+        <input type="text" name="author" placeholder="Nome do autor">
     </div>
 </div>
 
@@ -16,7 +23,7 @@
     <div>Ingredientes</div>
     <div id="ingredients">
         <div class="ingredient">
-            <input type="text" name="ingredients[]">
+            <input type="text" name="ingredients[]" placeholder="Ingrediente">
         </div>
     </div>
     <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
