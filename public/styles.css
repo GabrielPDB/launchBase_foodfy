@@ -246,3 +246,44 @@ footer p {
 .recipe_item.hide {
     display: none;
 }
+
+/* =====ADMIN===== */
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+header.admin {
+    max-width: none;
+    background-color: var(--primary-color);
+}
+
+h2.admin {
+    margin: 50px 0 30px 0;
+}
+
+.recipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.recipe {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
+.recipe .card-image img {
+    height: 80px;
+    border-radius: 9px;
+}
+
+.recipe .card-button a {
+    font-weight: bold;
+    font-size: 14px;
+    color: #6558C3;
+}
