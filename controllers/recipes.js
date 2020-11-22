@@ -108,7 +108,7 @@ exports.put = function (req, res) {
     if (!foundRecipe) return res.send('Recipe not found!')
 
     const recipe = {
-        ...foundRecipe, 
+        ...foundRecipe,
         ...req.body,
         id: Number(req.body.id)
     }
@@ -123,5 +123,17 @@ exports.put = function (req, res) {
 }
 
 exports.delete = function (req, res) {
-    return true
+    const { id } = req.body
+
+    const filteredRecipes = data.recipes.filter(function (recipe) {
+        return recipe.id != id
+    })
+
+    data.recipes = filteredRecipes
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
+        if (err) return res.send('Write file error!')
+
+        return res.redirect('/admin/recipes')
+    })
 }
