@@ -1,5 +1,32 @@
-{% extends "admin/layout.njk" %}
+<div class="item">
+    <div>Imagem da receita</div>
+    <div>
+        <input type="url" name="recipe_image_url" placeholder="http://" value="{{ recipe.recipe_image_url }}">
+    </div>
+</div>
 
-{% block content %}
-fields
-{% endblock content %}
+<div class="item">
+    <div>Ingredientes</div>
+    <div id="ingredients">
+        <div class="ingredient">
+            <input type="text" name="ingredients[]">
+        </div>
+    </div>
+    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+</div>
+
+<div class="item">
+    <div>Modo de preparo</div>
+    <div id="steps">
+        <div class="step">
+            <input type="text" name="preparation[]">
+        </div>
+    </div>
+    <button type="button" class="add-step">Adicionar novo passo</button>
+</div>
+
+<div class="item">
+    <div>Informações adicionais</div>
+    {# <input type="text" name="information" value="{{ recipe.information }}"> #}
+    <textarea name="information"></textarea>
+</div>

@@ -1,5 +1,16 @@
 {% extends "admin/layout.njk" %}
 
 {% block content %}
-create
+    <div class="container">
+        <form action="#">
+            <div class="admin-header">
+                <h2 class="admin">Criando receita</h2>
+                <div class="options">
+                    <button type="submit" class="button">Salvar receita</button>
+                </div>
+            </div>
+
+            {% include "admin/fields.njk" %}
+        </form>
+    </div>
 {% endblock content %}
