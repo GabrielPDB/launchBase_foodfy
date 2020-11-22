@@ -264,6 +264,19 @@ header.admin {
     background-color: var(--primary-color);
 }
 
+header.admin .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.material-icons {
+    color: white;
+}
+
+.material-icons.menu-admin {
+    color: black;
+}
+
 .admin-header {
     display: flex;
     justify-content: space-between;
@@ -315,6 +328,16 @@ header.admin {
     font-weight: bold;
     font-size: 14px;
     color: #6558C3;
+}
+
+.recipe-admin .card-content .card-name h3 {
+    font-size: 18px;
+    color: #111111;
+}
+
+.recipe-admin .card-content .card-name h4 {
+    font-size: 14px;
+    color: #777777;
 }
 
 /* FIELDS */

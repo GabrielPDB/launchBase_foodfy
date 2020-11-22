@@ -5,105 +5,36 @@
     <div class="container">
         <div class="admin-header">
             <h2>Gerenciar receitas</h2>
+            <div class="options">
+                <a href="/admin/recipes/create" class="button">Nova receita</a>
+            </div>
         </div>
 
         <section class="recipes">
 
             {# Aqui entra um for com as receitas depois #}
 
-            <div class="recipe-admin" id="">
-                <div class="card-image">
-                    <img src="/assets/burger.png" alt="Imagem de burger">
-                </div>
-                <div class="card-content">
-                    <div class="card-name">
-                        <h3>Triplo bacon burguer</h3>
+            {% for recipe in recipes %}
+                <div class="recipe-admin">
+                    <div class="card-image">
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
                     </div>
-                    <div class="card-author">
-                        <h4>
-                            por Jorgin
-                        </h4>
-                    </div>
-                    <div class="card-button">
-                        <a href="#">Visualizar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-admin" id="">
-                <div class="card-image">
-                    <img src="/assets/burger.png" alt="Imagem de burger">
-                </div>
-                <div class="card-content">
-                    <div class="card-name">
-                        <h3>Triplo bacon burguer</h3>
-                    </div>
-                    <div class="card-author">
-                        <h4>
-                            por Jorgin
-                        </h4>
+                    <div class="card-content">
+                        <div class="card-name">
+                            <h3>{{recipe.title}}</h3>
+                        </div>
+                        <div class="card-author">
+                            <h4>
+                                por
+                                {{recipe.author}}
+                            </h4>
+                        </div>
+                        <div class="card-button">
+                            <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="recipe-admin" id="">
-                <div class="card-image">
-                    <img src="/assets/burger.png" alt="Imagem de burger">
-                </div>
-                <div class="card-content">
-                    <div class="card-name">
-                        <h3>Triplo bacon burguer</h3>
-                    </div>
-                    <div class="card-author">
-                        <h4>
-                            por Jorgin
-                        </h4>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-admin" id="">
-                <div class="card-image">
-                    <img src="/assets/burger.png" alt="Imagem de burger">
-                </div>
-                <div class="card-content">
-                    <div class="card-name">
-                        <h3>Triplo bacon burguer</h3>
-                    </div>
-                    <div class="card-author">
-                        <h4>
-                            por Jorgin
-                        </h4>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-admin" id="">
-                <div class="card-image">
-                    <img src="/assets/burger.png" alt="Imagem de burger">
-                </div>
-                <div class="card-content">
-                    <div class="card-name">
-                        <h3>Triplo bacon burguer</h3>
-                    </div>
-                    <div class="card-author">
-                        <h4>
-                            por Jorgin
-                        </h4>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-admin" id="">
-                <div class="card-image">
-                    <img src="/assets/burger.png" alt="Imagem de burger">
-                </div>
-                <div class="card-content">
-                    <div class="card-name">
-                        <h3>Triplo bacon burguer</h3>
-                    </div>
-                    <div class="card-author">
-                        <h4>
-                            por Jorgin
-                        </h4>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
         </section>
     </div>
