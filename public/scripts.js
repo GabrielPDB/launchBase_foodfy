@@ -60,12 +60,6 @@ document.querySelector('.add-step').addEventListener('click', addStep)
 const buttons = document.querySelectorAll('.showHideButton')
 const items = document.querySelectorAll('.recipe_item')
 
-for (let button of buttons) {
-    button.addEventListener('click', function () {
-        
-    })
-}
-
 for (const button in buttons) {
     buttons[button].addEventListener('click', function () {
         if (buttons[button].innerHTML === "esconder") {
